@@ -1,0 +1,91 @@
+/* Ana kapsayıcılar için CSS Grid düzeni */
+.popular {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.item {
+  /* width: 280px; - Bu satırı kaldırdık, genişliği artık Grid yönetiyor */
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+}
+
+.item p {
+  margin: 6px 0px;
+}
+
+.item-prices {
+  display: flex;
+  gap: 20px;
+}
+
+.item-price-new {
+  color: #374151;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.item-price-old {
+  color: #8c8c8c;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  transition: 0.6s;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width:1280px) {
+  /* Ürün ayarları */
+  .popular {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+  }
+  .item{
+    font-size: 14px;
+  }
+}
+
+@media(max-width:1024px) {
+  /* Ürün ayarları */
+  .popular {
+    gap: 10px;
+  }
+  .item-price-new,
+  .item-price-old {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:800px) {
+  /* Ürün ayarları */
+  .popular {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width:500px) {
+  /* Ürün ayarları */
+  .popular {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .item p {
+    font-size: 12px;
+  }
+  .item-prices {
+    gap: 10px;
+  }
+  .item-price-new,
+  .item-price-old {
+    font-size: 14px;
+  }
+}
